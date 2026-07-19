@@ -27,14 +27,14 @@ app.get('/api', (_req, res) => {
     res.json({
         message: 'Octofit Tracker API',
         baseUrl: apiBaseUrl,
-        endpoints: ['/api/users/', '/api/teams/', '/api/activities', '/api/leaderboard', '/api/workouts'],
+        endpoints: ['/api/users/', '/api/teams/', '/api/activities/', '/api/leaderboard/', '/api/workouts/'],
     });
 });
 app.use('/api/users/', users_1.default);
 app.use('/api/teams/', teams_1.default);
-app.use('/api/activities', activities_1.default);
-app.use('/api/leaderboard', leaderboard_1.default);
-app.use('/api/workouts', workouts_1.default);
+app.use('/api/activities/', activities_1.default);
+app.use('/api/leaderboard/', leaderboard_1.default);
+app.use('/api/workouts/', workouts_1.default);
 async function start() {
     try {
         if (database_1.default.readyState !== 1) {
