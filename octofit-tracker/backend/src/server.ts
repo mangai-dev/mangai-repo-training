@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import usersRouter from './routes/users';
 import teamsRouter from './routes/teams';
 import activitiesRouter from './routes/activities';
@@ -8,6 +9,8 @@ import db from './config/database';
 
 const app = express();
 const port = process.env.PORT || 8000;
+
+app.use(cors());
 const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/octofit_db';
 const codespaceName = process.env.CODESPACE_NAME;
 const apiBaseUrl = codespaceName
